@@ -1,0 +1,196 @@
+.page {
+  min-height: calc(100vh - 84px);
+  background: #F7F7F8;
+}
+
+.container {
+  width: 100%;
+  max-width: 773px;
+  margin: 0 auto;
+  padding: 40px 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mainStack {
+  width: 100%;
+  max-width: 773px;
+}
+
+.searchGroup {
+  width: 773px;
+  max-width: 773px;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  box-sizing: border-box;
+  display: flex;
+  gap: 16px;
+  justify-content: flex-start;
+}
+
+.searchButton :global(.mantine-Button-root) {
+  background-color: #5E96FC;
+}
+
+.searchButton :global(.mantine-Button-root:hover) {
+  background-color: #4C88F0;
+}
+
+.searchButton :global(.mantine-Button-root:active) {
+  background-color: #3B7BE0;
+}
+
+.searchInput {
+  width: 657px;
+  max-width: 657px;
+  flex: 0 0 657px;
+  margin: 0;
+}
+
+.searchInput :global(.mantine-TextInput-input) {
+  height: 48px;
+  border: 1px solid #EAEBED;
+  border-radius: 8px;
+  font-size: 14px;
+  padding: 0 12px;
+  width: 100%;
+}
+
+.searchInput :global(.mantine-TextInput-input::placeholder) {
+  color: #ACADB9;
+}
+
+.searchButton {
+  background-color: #5E96FC !important;
+  color: white !important;
+  height: 32px !important;
+  padding: 4px 20px !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  line-height: 1.5 !important;
+  border-radius: 8px !important;
+  min-width: auto !important;
+  border: none !important;
+  margin-top: 3px !important;
+  margin-left: 15px !important;
+  margin-bottom: 0 !important;
+  align-self: flex-start !important;
+  flex-shrink: 0;
+}
+
+.searchButton:hover {
+  background-color: #4C88F0 !important;
+}
+
+.searchButton:active {
+  background-color: #3B7BE0 !important;
+}
+
+@media (max-width: 773px) {
+  .searchGroup {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 16px !important;
+  }
+
+  .searchInput {
+    width: 100% !important;
+    max-width: 468px !important;
+    flex: none !important;
+    margin: 0 !important;
+  }
+
+  .searchInput :global(.mantine-TextInput-wrapper) {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .searchInput :global(.mantine-TextInput-input) {
+    font-size: 13px;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .searchButton {
+    width: auto !important;
+    max-width: none !important;
+    height: 32px !important;
+    font-size: 13px !important;
+    margin-top: 5px !important;
+    margin-right: 20px !important;
+    margin-bottom: 0 !important;
+    margin-left: 0 !important;
+    padding-right: 20px !important;
+    padding-left: 20px !important;
+    align-self: center !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .page {
+    padding: 20px 0;
+    min-height: calc(100vh - auto);
+  }
+
+  .container {
+    padding: 20px 16px;
+  }
+
+  .searchInput {
+    max-width: 337px !important;
+    width: 100% !important;
+  }
+}
+
+.paginationBox {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.paginationWrapper :global(.mantine-Pagination-root) {
+  gap: 8px;
+}
+
+.paginationWrapper :global(.mantine-Pagination-control) {
+  border: 1px solid #D5D6DC;
+  border-radius: 4px;
+  min-width: 32px;
+  height: 32px;
+  padding: 0 8px;
+  font-size: 16px;
+  font-weight: 400;
+  color: #232134;
+}
+
+.paginationWrapper :global(.mantine-Pagination-control[data-active]) {
+  background-color: #5E96FC !important;
+  border-color: #5E96FC !important;
+  color: white !important;
+}
+
+.paginationWrapper :global(.mantine-Pagination-control[data-active] *) {
+  color: white !important;
+}
+
+.paginationWrapper :global(.mantine-Pagination-control[data-active] span) {
+  color: white !important;
+}
+
+.paginationWrapper :global(.mantine-Pagination-control[data-disabled]) {
+  border-color: #EAEBED;
+  opacity: 1;
+  color: #D5D6DC;
+}
+
+.paginationWrapper :global(.mantine-Pagination-dots) {
+  border: 1px solid #D5D6DC;
+  border-radius: 4px;
+  color: #232134;
+}

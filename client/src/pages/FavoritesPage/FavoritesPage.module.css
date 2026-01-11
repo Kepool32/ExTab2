@@ -1,0 +1,24 @@
+.page {
+  min-height: calc(100vh - 84px);
+  background: #F7F7F8;
+}
+
+.container {
+  width: 100%;
+  max-width: 773px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  box-sizing: border-box;
+  min-height: calc(100vh - 84px);
+}
+
+@media (max-width: 768px) {
+  .page {
+    padding: 20px 0;
+    min-height: calc(100vh - auto);
+  }
+
+  .container {
+    padding: 20px 16px;
+  }
+}

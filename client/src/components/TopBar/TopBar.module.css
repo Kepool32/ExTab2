@@ -1,0 +1,186 @@
+.topBar {
+  background: white;
+  padding: 10px 0;
+  min-height: 84px;
+  border-bottom: none !important;
+}
+
+.topBar :global(.mantine-Container-root) {
+  border-bottom: none !important;
+}
+
+.container {
+  height: 100%;
+  padding: 0 162px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+@media (max-width: 1440px) {
+  .container {
+    padding: 0 80px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .container {
+    padding: 0 40px;
+  }
+}
+
+@media (max-width: 900px) {
+  .container {
+    padding: 0 20px;
+  }
+}
+
+.contentWrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  min-height: 64px;
+}
+
+.logoGroup {
+  gap: 12px;
+  margin-left: 7%;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.logo {
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+}
+
+.logoText {
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: -0.02em;
+  font-size: 24px;
+}
+
+.tabsWrapper {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.tabsList {
+  border: none !important;
+  display: flex !important;
+}
+
+.tabsList :global(.mantine-Tabs-tab + .mantine-Tabs-tab) {
+  margin-left: 60px !important;
+}
+
+.tabsList :global(.mantine-Tabs-tab) {
+  padding: 0 !important;
+}
+
+.tabsList::before {
+  display: none !important;
+}
+
+.tab {
+  padding: 0 !important;
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: 400;
+  color: #232134;
+  border: none !important;
+  background: transparent !important;
+  border-bottom: none !important;
+}
+
+.tab::before {
+  display: none !important;
+}
+
+.tab[data-active] {
+  font-weight: 500;
+  color: #5E96FC !important;
+}
+
+.tab[data-active]::before {
+  display: none !important;
+}
+
+.tab:hover {
+  background: transparent !important;
+}
+
+@media (max-width: 768px) {
+  .topBar {
+    padding: 16px 0;
+    min-height: auto;
+  }
+
+  .container {
+    padding: 0 16px;
+    justify-content: center;
+  }
+
+  .contentWrapper {
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+    justify-content: center;
+    min-height: auto;
+  }
+
+  .logoGroup {
+    justify-content: center;
+    margin-left: 0;
+  }
+
+  .logoText {
+    font-size: 20px;
+  }
+
+  .tabsWrapper {
+    position: static;
+    transform: none;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .tabsList {
+    flex-direction: column !important;
+    gap: 12px !important;
+    width: 100%;
+    align-items: center;
+  }
+
+  .tabsList :global(.mantine-Tabs-tab + .mantine-Tabs-tab) {
+    margin-left: 0 !important;
+    margin-top: 0 !important;
+  }
+
+  .tabsList :global(.mantine-Tabs-tab) {
+    width: auto;
+    text-align: center;
+  }
+
+  .tab {
+    font-size: 14px;
+    width: auto;
+    padding: 4px 0 !important;
+  }
+}
+
+@media (max-width: 153px) {
+  .logoGroup {
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+  }
+}

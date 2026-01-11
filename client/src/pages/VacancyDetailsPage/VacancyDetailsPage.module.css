@@ -1,0 +1,139 @@
+.page {
+  min-height: calc(100vh - 84px);
+  background: #F7F7F8;
+}
+
+.container {
+  width: 100%;
+  max-width: 773px;
+  margin: 0 auto;
+  padding: 40px 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.content {
+  width: 100%;
+  max-width: 773px;
+}
+
+.headerCard {
+  width: 100%;
+  background: white;
+  border: 1px solid #EAEBED;
+}
+
+.headerStack {
+  flex: 1;
+  min-width: 0;
+}
+
+.bullet {
+  line-height: 1.05;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.21;
+  color: #232134;
+  word-break: break-word;
+}
+
+.sectionCard {
+  width: 100%;
+  background: white;
+  border: 1px solid #EAEBED;
+}
+
+.sectionTitle {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #232134;
+}
+
+.sectionText {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #232134;
+}
+
+.listContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.listItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.dot {
+  color: #232134;
+  font-size: 16px;
+  line-height: 1.5;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+@media (max-width: 773px) {
+  .container {
+    padding: 20px 16px;
+  }
+
+  .content {
+    width: 100%;
+  }
+
+  .headerCard {
+    padding: 20px !important;
+  }
+
+  .sectionCard {
+    padding: 20px !important;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  .sectionTitle {
+    font-size: 18px;
+  }
+
+  .sectionText {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .page {
+    padding: 0;
+  }
+
+  .container {
+    padding: 20px 16px;
+  }
+
+  .title {
+    font-size: 20px;
+  }
+
+  .sectionTitle {
+    font-size: 16px;
+    margin-bottom: 12px !important;
+  }
+
+  .sectionText {
+    font-size: 14px;
+  }
+
+  .dot {
+    font-size: 14px;
+  }
+}
