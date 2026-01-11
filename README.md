@@ -113,6 +113,5 @@ npm run start:dev
 - `client/.env.development` - для development клиента
 - `client/.env.production` - для production клиента
 
-## Лицензия
 
-MIT
+
