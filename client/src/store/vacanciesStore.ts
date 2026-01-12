@@ -55,9 +55,9 @@ export const useVacanciesStore = create<VacanciesState>((set, get) => ({
       } else {
         throw new Error('Invalid response format from server');
       }
-    } catch (error: any) {
+    } catch (error) {
       console.error('Error fetching vacancies:', error);
-      const errorMessage = error?.userMessage || (error instanceof Error ? error.message : 'Не удалось загрузить вакансии');
+      const errorMessage = (error as any)?.userMessage || (error instanceof Error ? error.message : 'Не удалось загрузить вакансии');
       set({
         vacancies: [],
         paginationMeta: null,
@@ -72,8 +72,8 @@ export const useVacanciesStore = create<VacanciesState>((set, get) => ({
     try {
       const vacancy = await vacanciesApi.getById(id);
       set({ selectedVacancy: vacancy, isLoading: false });
-    } catch (error: any) {
-      const errorMessage = error?.userMessage || (error instanceof Error ? error.message : 'Не удалось загрузить вакансию');
+    } catch (error) {
+      const errorMessage = (error as any)?.userMessage || (error instanceof Error ? error.message : 'Не удалось загрузить вакансию');
       set({
         error: errorMessage,
         isLoading: false,
@@ -92,8 +92,8 @@ export const useVacanciesStore = create<VacanciesState>((set, get) => ({
         isLoading: false,
         error: null,
       });
-    } catch (error: any) {
-      const errorMessage = error?.userMessage || (error instanceof Error ? error.message : 'Не удалось создать вакансию');
+    } catch (error) {
+      const errorMessage = (error as any)?.userMessage || (error instanceof Error ? error.message : 'Не удалось создать вакансию');
       set({
         error: errorMessage,
         isLoading: false,
@@ -112,8 +112,8 @@ export const useVacanciesStore = create<VacanciesState>((set, get) => ({
         isLoading: false,
         error: null,
       });
-    } catch (error: any) {
-      const errorMessage = error?.userMessage || (error instanceof Error ? error.message : 'Не удалось удалить вакансию');
+    } catch (error) {
+      const errorMessage = (error as any)?.userMessage || (error instanceof Error ? error.message : 'Не удалось удалить вакансию');
       set({
         error: errorMessage,
         isLoading: false,
