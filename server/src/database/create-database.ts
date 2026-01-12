@@ -38,7 +38,8 @@ async function createDatabaseIfNotExists() {
 
     await adminDataSource.destroy();
   } catch (error) {
-    console.error('❌ Error creating database:', error.message);
+    const errorMessage = error instanceof Error ? error.message : 'Unknown error occurred';
+    console.error('❌ Error creating database:', errorMessage);
     if (adminDataSource.isInitialized) {
       await adminDataSource.destroy();
     }

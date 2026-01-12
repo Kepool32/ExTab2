@@ -33,7 +33,8 @@ export async function initializeSchema() {
       await dataSource.destroy();
     }
   } catch (error) {
-    console.error('❌ Error initializing database schema:', error.message);
+    const errorMessage = error instanceof Error ? error.message : 'Unknown error occurred';
+    console.error('❌ Error initializing database schema:', errorMessage);
     if (initialized && dataSource.isInitialized) {
       await dataSource.destroy();
     }
