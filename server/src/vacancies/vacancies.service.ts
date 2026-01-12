@@ -15,24 +15,26 @@ export class VacanciesService {
 
   async findAll(paginationDto?: PaginationDto) {
     const { page = 1, limit = 4 } = paginationDto || {};
-    const skip = (page - 1) * limit;
+    const normalizedLimit = Math.max(1, Math.min(100, limit));
+    const normalizedPage = Math.max(1, page);
+    const skip = (normalizedPage - 1) * normalizedLimit;
 
     const [items, totalItems] = await this.vacancyRepository.findAndCount({
       order: { createdAt: 'DESC' },
-      take: limit,
+      take: normalizedLimit,
       skip,
     });
 
-    const totalPages = Math.ceil(totalItems / limit);
+    const totalPages = normalizedLimit > 0 ? Math.ceil(totalItems / normalizedLimit) : 0;
 
     return {
       items,
       meta: {
         totalItems,
         itemCount: items.length,
-        itemsPerPage: limit,
+        itemsPerPage: normalizedLimit,
         totalPages,
-        currentPage: page,
+        currentPage: normalizedPage,
       },
     };
   }
@@ -57,29 +59,32 @@ export class VacanciesService {
 
   async search(searchDto: SearchVacanciesQueryDto) {
     const { keyword, page = 1, limit = 4 } = searchDto;
-    const skip = (page - 1) * limit;
+    const normalizedLimit = Math.max(1, Math.min(100, limit));
+    const normalizedPage = Math.max(1, page);
+    const normalizedKeyword = keyword?.trim() || '';
+    const skip = (normalizedPage - 1) * normalizedLimit;
 
-    const where = keyword
-      ? { title: ILike(`%${keyword}%`) }
+    const where = normalizedKeyword
+      ? { title: ILike(`%${normalizedKeyword}%`) }
       : {};
 
     const [items, totalItems] = await this.vacancyRepository.findAndCount({
       where,
       order: { createdAt: 'DESC' },
-      take: limit,
+      take: normalizedLimit,
       skip,
     });
 
-    const totalPages = Math.ceil(totalItems / limit);
+    const totalPages = normalizedLimit > 0 ? Math.ceil(totalItems / normalizedLimit) : 0;
 
     return {
       items,
       meta: {
         totalItems,
         itemCount: items.length,
-        itemsPerPage: limit,
+        itemsPerPage: normalizedLimit,
         totalPages,
-        currentPage: page,
+        currentPage: normalizedPage,
       },
     };
   }
